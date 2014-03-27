@@ -42,6 +42,6 @@ To be honest though - this might be a bit unpractical for you. Remember that thi
 
 ## More information
 
-* Check out (Spark on Github)[https://github.com/perwendel/spark] for more about this awesome micro framework
-* Also look at (Handlebars.java on Github)[https://github.com/jknack/handlebars.java] for more on how to use this templating framework
-* Lastly, all the stuff you need to know about Handlebars templates can be found on (their website)[http://handlebarsjs.com/].
+* Check out [Spark on Github](https://github.com/perwendel/spark) for more about this awesome micro framework
+* Also look at [Handlebars.java on Github](https://github.com/jknack/handlebars.java) for more on how to use this templating framework
+* Lastly, all the stuff you need to know about Handlebars templates can be found on [their website](http://handlebarsjs.com).
