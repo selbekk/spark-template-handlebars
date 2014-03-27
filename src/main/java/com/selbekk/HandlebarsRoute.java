@@ -1,8 +1,7 @@
-package com.kristoferselbekk;
+package com.selbekk;
 
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
-import com.github.jknack.handlebars.io.ClassPathTemplateLoader;
 import com.github.jknack.handlebars.io.TemplateLoader;
 import spark.ModelAndView;
 import spark.TemplateViewRoute;
@@ -18,7 +17,7 @@ public abstract class HandlebarsRoute extends TemplateViewRoute {
      *
      * @param path The route path which is used for matching. (e.g. /hello, users/:name)
      */
-    protected HandlebarsRoute(String path) {
+    public HandlebarsRoute(String path) {
         super(path);
         handlebars = new Handlebars();
     }
@@ -29,9 +28,34 @@ public abstract class HandlebarsRoute extends TemplateViewRoute {
      * @param path The route path which is used for matching. (e.g. /hello, users/:name)
      * @param acceptType The accept type which is used for matching.
      */
-    protected HandlebarsRoute(String path, String acceptType) {
+    public HandlebarsRoute(String path, String acceptType) {
         super(path, acceptType);
         handlebars = new Handlebars();
+    }
+
+    /**
+     * Constructor
+     *
+     * @param path The route path which is used for matching. (e.g. /hello, users/:name)
+     * @param config A configuration object for Handlebars
+     */
+    public HandlebarsRoute(String path, HandlebarsConfig config) {
+        super(path);
+        TemplateLoader loader = config.getTemplateLoader();
+        handlebars = new Handlebars(loader);
+    }
+
+    /**
+     * Constructor
+     *
+     * @param path The route path which is used for matching. (e.g. /hello, users/:name)
+     * @param acceptType The accept type which is used for matching.
+     * @param config A configuration object for Handlebars
+     */
+    public HandlebarsRoute(String path, String acceptType, HandlebarsConfig config) {
+        super(path, acceptType);
+        TemplateLoader loader = config.getTemplateLoader();
+        handlebars = new Handlebars(loader);
     }
 
     /**
